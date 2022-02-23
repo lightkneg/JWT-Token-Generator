@@ -2,19 +2,21 @@
     require 'bootstrap.php';
 
     // get the local secret key
-    $secret = getenv('SECRET');
+    // $secret = getenv('SECRET');
+    $secret = file_get_contents('privatekey.pem');
 
     // Create the token header
     $header = json_encode([
         "typ" => "JWT",
-        "alg" => "HS256"
+        "alg" => "RS256"
     ]);
 
     // Create the token payload
     $payload = json_encode([
-        "user_id" => 1,
-        "role" => "admin",
-        "exp" => 1593828222
+        "iss" => "e-wallet.hellenium.com",
+        "sub" => "pepGfYtv5phG6ygbo49BTp-PsxJqLaQe4FgaAaK5Tdg",
+        "aud" => "https://revolut.com",
+        "exp" => 1672444800000
     ]);
 
     // Encode Header
