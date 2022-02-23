@@ -6,15 +6,15 @@
 
     // Create the token header
     $header = json_encode([
-        'typ' => 'JWT',
-        'alg' => 'HS256'
+        "typ" => "JWT",
+        "alg" => "HS256"
     ]);
 
     // Create the token payload
     $payload = json_encode([
-        'user_id' => 1,
-        'role' => 'admin',
-        'exp' => 1593828222
+        "user_id" => 1,
+        "role" => "admin",
+        "exp" => 1593828222
     ]);
 
     // Encode Header
