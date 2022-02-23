@@ -1,4 +1,2 @@
 /vendor
 .env
-privatekey.pem
-publickey.cer
